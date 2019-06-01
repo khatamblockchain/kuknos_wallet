@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.RecoverWalletActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/recoverToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        app:titleTextColor="@color/colorPrimaryDark"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <TextView
+        android:id="@+id/invalidPhraseTextView"
+        android:layout_below="@+id/recoverToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/invalid_input_for_phrase"
+        style="@style/RegularText"
+        android:gravity="center"
+        android:textColor="@color/terracotta"
+        android:visibility="invisible"
+        android:layout_margin="@dimen/activity_vertical_margin"/>
+
+    <EditText
+        android:id="@+id/phraseEditText"
+        android:layout_below="@id/invalidPhraseTextView"
+        android:layout_above="@id/nextButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:digits="@string/mnemonic_alphabet"
+        style="@style/RegularText"
+        android:padding="@dimen/activity_vertical_margin"
+        android:background="@android:color/transparent"
+        android:textSize="@dimen/text_size_medium"
+        android:gravity="top"/>
+
+    <EditText
+        android:id="@+id/secretKeyEditText"
+        android:layout_below="@id/invalidPhraseTextView"
+        android:layout_above="@id/passphraseButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:digits="@string/stellar_address_alphabet"
+        style="@style/RegularText"
+        android:inputType="textCapCharacters"
+        android:padding="@dimen/activity_vertical_margin"
+        android:background="@android:color/transparent"
+        android:textSize="@dimen/text_size_medium"
+        android:gravity="top"/>
+
+    <TextView
+        android:id="@+id/passphraseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/advanced_security"
+        android:layout_above="@+id/nextButton"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/activity_vertical_margin"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/nextButton"
+        style="@style/PrimaryButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:text="@string/next_button_text" />
+
+</RelativeLayout>
